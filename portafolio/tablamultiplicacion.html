@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+
+<h1> CALCULAR LA TABLA DE MULTIPLICAR</h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");    
+    }  
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+    var tabla= parseInt(prompt("¿la tabla de que número quiere saber?"));
+    var maximo= parseInt(prompt("hasta donde quiere saber los multiplos de "+ tabla));
+    var multiplicador=1;
+
+    imprimir("while");
+
+     while(multiplicador<=maximo){
+    imprimir(tabla*multiplicador);
+     multiplicador++;
+    }
+
+    imprimir("for");
+    for (var multiplicador =1; multiplicador <= maximo; multiplicador++) {
+        
+        imprimir(tabla*multiplicador); 
+    }
+            
+</script>

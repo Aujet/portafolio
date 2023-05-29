@@ -1,0 +1,50 @@
+<meta charset="UTF-8">
+
+<h1>PROGRAMA JUEGO DE ADIVINACION </h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");    
+        document.write("<br>");    
+        document.write("<br>");    
+    }  
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+    function sorteo(n){
+
+        return Math.round(Math.random()*n);;} 
+      
+    var n = parseInt(prompt("Ingrese un número maximo para jugar"));
+    var numeroPensado = sorteo(n);
+    var numeroLanzado = parseInt(prompt("Ingrese un número entre 0-"+n))
+    var contador =0;
+    var intentos = 3;
+    while (contador<intentos && numeroPensado!=numeroLanzado){
+        
+   
+        if (numeroLanzado<numeroPensado) {
+                //imprimir("usted erró, el número pensado es menor al número ganador");
+                numeroLanzado= parseInt(prompt("intente de nuevo con un numero mayor"));
+                contador=contador+1;
+    
+        }else{
+             //imprimir("usted erró, el número pensado era mayor al número ganador"); 
+             numeroLanzado= parseInt(prompt("intente con un numero menor"));
+            contador=contador+1;
+        }
+    
+    }
+    if (intentos>=contador && numeroPensado!= numeroLanzado) {
+        imprimir("supero el número de intentos");
+    }
+    if (numeroPensado == numeroLanzado){
+        imprimir("usted acertó");
+        contador=contador+1;
+    }
+  
+    
+</script>

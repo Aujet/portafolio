@@ -1,0 +1,49 @@
+<meta charset="UFT-8">
+
+<script>
+	
+	function saltoLinea() {
+		document.write("<br>");
+		document.write("<br>");
+		document.write("<br>");
+	}	
+	function imprimir(frase){
+		document.write(frase);
+		document.write("<br>");
+	}
+		
+	nombre = prompt("informe su nombre");
+	pesoInformado = parseInt(prompt(nombre + ", informe su peso"));
+	alturaInformado = parseFloat(prompt(nombre + ", informe su altura"));
+	imprimir(alturaInformado);
+	imprimir(pesoInformado);
+	function calcularImc(peso,altura){
+		return(peso/(Math.pow(altura,2)));
+	}	
+	
+	imcCalculado = calcularImc(pesoInformado,alturaInformado);
+	imprimir(nombre+", su imc calculado es: "+ imcCalculado.toFixed(1));
+	
+	if (imcCalculado>=40){
+		imprimir("tiene obesidad de clase III");
+	} else {
+		if (imcCalculado<39,9 && imcCalculado>35) {
+			imprimir("tiene obesidad de clase II");
+		} else {
+			if (imcCalculado<34,9 && imcCalculado>=30) {
+				imprimir("tiene obesidad de clase I");
+			} else {
+				if (imcCalculado<29,9 && imcCalculado>=25) {
+					imprimir("tiene preobesidad");
+				} else {
+					if (imcCalculado<24,9 && imcCalculado>18,5) {
+						imprimir("tiene un peso normal");
+					} else {
+						imprimir("tiene un peso menor al recomendado");
+					}
+				}
+			}
+		}
+	}		
+	
+</script>
